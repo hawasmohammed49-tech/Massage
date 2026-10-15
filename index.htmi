@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>رسالة خاصة ❤️</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid;
+      place-items: center; padding: 24px;
+      background: radial-gradient(circle at top, #38251d, #100e12 65%);
+      color: #f8e9c5; font-family: Tahoma, sans-serif;
+    }
+    main {
+      width: 100%; max-width: 420px; padding: 36px 24px;
+      text-align: center; border: 1px solid #b99a57;
+      border-radius: 22px; background: #171419;
+      box-shadow: 0 0 45px #b99a5720;
+    }
+    .heart { font-size: 42px; }
+    h1 { color: #e5c783; font-size: 26px; }
+    p { color: #d0c6b5; line-height: 1.9; }
+    input, button {
+      width: 100%; padding: 14px; margin-top: 12px;
+      border-radius: 10px; font-size: 16px;
+    }
+    input {
+      background: #242027; color: white;
+      border: 1px solid #76613b; text-align: center;
+    }
+    button {
+      background: #c5a45d; color: #17120a;
+      border: 0; font-weight: bold; cursor: pointer;
+    }
+    #message { display: none; font-size: 32px; color: #e5c783; }
+    #error { color: #ffaaa5; }
+    small { display: block; margin-top: 25px; color: #8d806c; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="heart">♡</div>
+    <h1>رسالة خاصة ليكي</h1>
+    <p>فيه رسالة صغيرة مستنياكي... ❤️</p>
+    <form id="form">
+      <input id="password" type="password"
+        placeholder="اكتبي كلمة السر" required>
+      <button type="submit">افتحي رسالتك ♡</button>
+    </form>
+    <p id="error"></p>
+    <div id="message">شكرا❤️</div>
+    <small>MADE WITH LOVE</small>
+  </main>
+  <script>
+    document.getElementById('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('error').textContent = '';
+      if (document.getElementById('password').value === '2152007') {
+        document.getElementById('form').style.display = 'none';
+        document.querySelector('main > p').style.display = 'none';
+        document.getElementById('message').style.display = 'block';
+        document.querySelector('h1').textContent = 'رسالة من قلبي ❤️';
+      } else {
+        document.getElementById('error').textContent = 'كلمة السر مش صحيحة، حاولي تاني';
+      }
+    });
+  </script>
+</body>
+</html>
